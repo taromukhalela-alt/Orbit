@@ -1,105 +1,105 @@
 .orbit-loader {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .loader {
-  display: block;
+    display: block;
 }
 
 .loader-ring {
-  transform-origin: center;
+    transform-origin: center;
 }
 
 .loader-ring-a {
-  animation: ringA 2.4s linear infinite;
+    animation: ringA 2.4s linear infinite;
 }
 
 .loader-ring-b {
-  animation: ringB 2.4s linear infinite;
+    animation: ringB 2.4s linear infinite;
 }
 
 .loader-ring-c {
-  animation: ringC 2.4s linear infinite;
+    animation: ringC 2.4s linear infinite;
 }
 
 .loader-ring-d {
-  animation: ringD 2.4s linear infinite;
+    animation: ringD 2.4s linear infinite;
 }
 
 @keyframes ringA {
-  0% {
-    stroke-dasharray: 0 660;
-    stroke-dashoffset: -330;
-  }
-  50% {
-    stroke-dasharray: 660 0;
-    stroke-dashoffset: -330;
-  }
-  100% {
-    stroke-dasharray: 0 660;
-    stroke-dashoffset: -330;
-  }
+    0% {
+        stroke-dasharray: 0 660;
+        stroke-dashoffset: -330;
+    }
+    50% {
+        stroke-dasharray: 660 0;
+        stroke-dashoffset: -330;
+    }
+    100% {
+        stroke-dasharray: 0 660;
+        stroke-dashoffset: -330;
+    }
 }
 
 @keyframes ringB {
-  0% {
-    stroke-dasharray: 0 220;
-    stroke-dashoffset: -110;
-  }
-  50% {
-    stroke-dasharray: 220 0;
-    stroke-dashoffset: -110;
-  }
-  100% {
-    stroke-dasharray: 0 220;
-    stroke-dashoffset: -110;
-  }
+    0% {
+        stroke-dasharray: 0 220;
+        stroke-dashoffset: -110;
+    }
+    50% {
+        stroke-dasharray: 220 0;
+        stroke-dashoffset: -110;
+    }
+    100% {
+        stroke-dasharray: 0 220;
+        stroke-dashoffset: -110;
+    }
 }
 
 @keyframes ringC {
-  0% {
-    stroke-dasharray: 0 440;
-  }
-  50% {
-    stroke-dasharray: 440 0;
-  }
-  100% {
-    stroke-dasharray: 0 440;
-  }
+    0% {
+        stroke-dasharray: 0 440;
+    }
+    50% {
+        stroke-dasharray: 440 0;
+    }
+    100% {
+        stroke-dasharray: 0 440;
+    }
 }
 
 @keyframes ringD {
-  0% {
-    stroke-dasharray: 0 440;
-  }
-  50% {
-    stroke-dasharray: 440 0;
-  }
-  100% {
-    stroke-dasharray: 0 440;
-  }
+    0% {
+        stroke-dasharray: 0 440;
+    }
+    50% {
+        stroke-dasharray: 440 0;
+    }
+    100% {
+        stroke-dasharray: 0 440;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .loader-ring-a,
-  .loader-ring-b,
-  .loader-ring-c,
-  .loader-ring-d {
-    animation-duration: 6s;
-  }
+    .loader-ring-a,
+    .loader-ring-b,
+    .loader-ring-c,
+    .loader-ring-d {
+        animation-duration: 6s;
+    }
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
