@@ -19,3 +19,12 @@ export async function ensureProjectDirectory(projectId: string) {
     const projectPath = getProjectPath(projectId);
     await ensureDirectory(projectPath);
 }
+
+export async function directoryExists(directoryPath: string) {
+    try {
+        await fs.access(directoryPath);
+        return true;
+    } catch {
+        return false;
+    }
+}
