@@ -3,91 +3,87 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    filter: drop-shadow(5px 5px 0 rgba(0, 0, 0, 0.14));
+}
+
+.orbit-loader::before,
+.orbit-loader::after {
+    position: absolute;
+    content: '';
+    border: 2px solid var(--color-border-strong);
+    border-radius: 999px;
+    opacity: 0.14;
+    pointer-events: none;
+}
+
+.orbit-loader::before {
+    inset: 12%;
+    animation: loaderPulse 2.8s ease-in-out infinite;
+}
+
+.orbit-loader::after {
+    inset: 27%;
+    border-color: var(--color-primary);
+    animation: loaderPulse 2.8s ease-in-out 0.5s infinite reverse;
 }
 
 .loader {
     display: block;
+    overflow: visible;
+    animation: loaderFloat 3.5s ease-in-out infinite;
 }
 
 .loader-ring {
     transform-origin: center;
 }
 
-.loader-ring-a {
-    animation: ringA 2.4s linear infinite;
-}
-
-.loader-ring-b {
-    animation: ringB 2.4s linear infinite;
-}
-
-.loader-ring-c {
-    animation: ringC 2.4s linear infinite;
-}
-
-.loader-ring-d {
-    animation: ringD 2.4s linear infinite;
-}
+.loader-ring-a { animation: ringA 2.4s linear infinite; }
+.loader-ring-b { animation: ringB 2.4s linear infinite; }
+.loader-ring-c { animation: ringC 2.4s linear infinite; }
+.loader-ring-d { animation: ringD 2.4s linear infinite; }
 
 @keyframes ringA {
-    0% {
-        stroke-dasharray: 0 660;
-        stroke-dashoffset: -330;
-    }
-    50% {
-        stroke-dasharray: 660 0;
-        stroke-dashoffset: -330;
-    }
-    100% {
-        stroke-dasharray: 0 660;
-        stroke-dashoffset: -330;
-    }
+    0% { stroke-dasharray: 0 660; stroke-dashoffset: -330; transform: rotate(0deg); }
+    50% { stroke-dasharray: 660 0; stroke-dashoffset: -330; }
+    100% { stroke-dasharray: 0 660; stroke-dashoffset: -330; transform: rotate(360deg); }
 }
 
 @keyframes ringB {
-    0% {
-        stroke-dasharray: 0 220;
-        stroke-dashoffset: -110;
-    }
-    50% {
-        stroke-dasharray: 220 0;
-        stroke-dashoffset: -110;
-    }
-    100% {
-        stroke-dasharray: 0 220;
-        stroke-dashoffset: -110;
-    }
+    0% { stroke-dasharray: 0 220; stroke-dashoffset: -110; transform: rotate(0deg); }
+    50% { stroke-dasharray: 220 0; stroke-dashoffset: -110; }
+    100% { stroke-dasharray: 0 220; stroke-dashoffset: -110; transform: rotate(-360deg); }
 }
 
 @keyframes ringC {
-    0% {
-        stroke-dasharray: 0 440;
-    }
-    50% {
-        stroke-dasharray: 440 0;
-    }
-    100% {
-        stroke-dasharray: 0 440;
-    }
+    0% { stroke-dasharray: 0 440; transform: rotate(0deg); }
+    50% { stroke-dasharray: 440 0; }
+    100% { stroke-dasharray: 0 440; transform: rotate(360deg); }
 }
 
 @keyframes ringD {
-    0% {
-        stroke-dasharray: 0 440;
-    }
-    50% {
-        stroke-dasharray: 440 0;
-    }
-    100% {
-        stroke-dasharray: 0 440;
-    }
+    0% { stroke-dasharray: 0 440; transform: rotate(0deg); }
+    50% { stroke-dasharray: 440 0; }
+    100% { stroke-dasharray: 0 440; transform: rotate(-360deg); }
+}
+
+@keyframes loaderFloat {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes loaderPulse {
+    0%, 100% { transform: scale(0.92); opacity: 0.08; }
+    50% { transform: scale(1.08); opacity: 0.22; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .loader-ring-a,
     .loader-ring-b,
     .loader-ring-c,
-    .loader-ring-d {
+    .loader-ring-d,
+    .loader,
+    .orbit-loader::before,
+    .orbit-loader::after {
         animation-duration: 6s;
     }
 }
