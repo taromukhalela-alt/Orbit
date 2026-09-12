@@ -161,4 +161,18 @@
     .section-header {
         @apply font-space text-sm font-bold tracking-widest text-text-muted uppercase mb-4;
     }
+
+    .starter-page {
+        background-image: linear-gradient(var(--color-border-subtle) 1px, transparent 1px), linear-gradient(90deg, var(--color-border-subtle) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+
+    .starter-grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.8;
+        background-image: linear-gradient(var(--color-border-subtle) 1px, transparent 1px), linear-gradient(90deg, var(--color-border-subtle) 1px, transparent 1px);
+        background-size: 32px 32px;
+        mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+    }
 }
