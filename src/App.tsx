@@ -4,14 +4,16 @@ import StarterPage from './pages/StarterPage';
 import Home from './pages/Home';
 import Integrations from './pages/Integrations';
 import Activities from './pages/Activities';
+import ProjectWorkspace from './pages/ProjectWorkspace';
 
 function AppLayout() {
     return (
-        <div className="flex items-start gap-6 h-screen p-6 bg-app box-border">
+        <div className="flex min-h-screen items-stretch gap-4 bg-app p-4 md:gap-6 md:p-6">
             <Sidebar />
-            <main className="flex-1 bg-surface border-[2px] border-border-strong rounded-lg p-8 overflow-y-auto">
+            <main className="min-w-0 flex-1 overflow-y-auto border-2 border-border-strong bg-surface p-5 shadow-[4px_4px_0_#000] md:p-8">
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/projects/:projectId" element={<ProjectWorkspace />} />
                     <Route path="/integrations" element={<Integrations />} />
                     <Route path="/activity" element={<Activities />} />
                     <Route path="*" element={<Navigate to="/" replace />} />

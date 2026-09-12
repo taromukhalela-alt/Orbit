@@ -1,27 +1,8 @@
+import { FolderOpen, Plus, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import OrbitLoader from '../components/ui/OrbitLoader';
 
 export default function StarterPage() {
     const navigate = useNavigate();
-
-    return (
-        <div className="flex items-center justify-center min-h-full bg-app p-8">
-            <div className="flex flex-col items-center gap-6 text-center max-w-[28rem]">
-                <h1 className="font-space text-[30px] font-bold tracking-[0.2em] text-text m-0 leading-none uppercase">
-                    ORBIT
-                </h1>
-                <OrbitLoader size={220} label="Orbit" />
-                <p className="font-roboto text-base font-medium text-text-muted m-0 leading-relaxed max-w-[20rem]">
-                    Your workspace. Structured. Fast. Unmistakable.
-                </p>
-                <button
-                    className="relative inline-flex items-center justify-center px-8 py-4 font-space text-lg font-bold tracking-widest text-on-primary bg-primary border-[3px] border-border-strong rounded-none cursor-pointer shadow-[6px_6px_0_#000] transition-all duration-100 uppercase outline-none mt-2 hover:bg-primary-hover hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[8px_8px_0_#000] active:translate-x-[4px] active:translate-y-[4px] active:shadow-[2px_2px_0_#000] active:bg-primary focus-visible:outline-[3px] focus-visible:outline-purple focus-visible:outline-offset-[3px]"
-                    onClick={() => navigate('/integrations')}
-                    type="button"
-                >
-                    ENTER ORBIT
-                </button>
-            </div>
-        </div>
-    );
+    return <main className="flex min-h-screen items-center justify-center bg-app p-8"><div className="grid w-full max-w-5xl gap-10 border-2 border-border-strong bg-surface p-8 shadow-[8px_8px_0_#ff0066] md:grid-cols-[0.8fr_1.2fr] md:p-12"><section className="flex flex-col justify-center"><div className="mb-10 flex items-center gap-3"><span className="flex size-10 items-center justify-center border-2 border-border-strong bg-primary font-space text-xl font-bold text-white">O</span><span className="font-space text-2xl font-bold tracking-[0.16em]">ORBIT</span></div><p className="font-mono text-xs font-bold tracking-widest text-primary">PROJECT CONTEXT / v0.1</p><h1 className="mt-4 max-w-lg text-4xl leading-tight tracking-tight md:text-5xl">Your work, with a memory.</h1><p className="mt-5 max-w-md text-base leading-6 text-text-muted">A focused workspace for the projects, tools, and decisions that make your code yours.</p><div className="mt-8 flex flex-wrap gap-3"><button className="btn btn-primary" type="button" onClick={() => navigate('/')}><ArrowRight data-icon="inline-end" size={17} /> Enter Orbit</button><button className="btn btn-secondary" type="button" onClick={() => navigate('/projects/new')}><Plus data-icon="inline-start" size={17} /> Create project</button></div></section><section className="flex min-h-80 flex-col items-center justify-center border-2 border-border-strong bg-white p-6"><OrbitLoader size={210} label="Orbit is ready" /><div className="mt-2 flex items-center gap-2 font-mono text-[10px] font-bold text-text-muted"><FolderOpen size={13} /> LOCAL WORKSPACE READY</div></section></div></main>;
 }
